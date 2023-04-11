@@ -27,6 +27,7 @@ public class User {
     private String name;
     @Email(message = "Invalid email format")
     private String email;
+    /* Al menos una letra minuscula , una letra Mayuscula y un numero - Longitud minima 7 - sin simbolos */
     @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{7,}$", message = "Invalid password format")
     private String password;
 

@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.javaspringboot.spring.model.User;
 import com.javaspringboot.spring.service.UserService;
 
-@CrossOrigin("*")
+@CrossOrigin("/user")
 @RestController
 public class UserController {
     
@@ -26,31 +26,31 @@ public class UserController {
     }
 
     /* Ver todos los usuario */
-    @GetMapping("/user")
+    @GetMapping("/")
     public List<User> allUser(){
         return userService.allUsers();
     }
 
     /* Ver usuario segun id */
-    @GetMapping("/user/{id}")
+    @GetMapping("/{id}")
     public User getUser(@PathVariable Long id){
         return userService.findUser(id);
     }
 
     /* Crear usuario */
-    @PostMapping("/user")
+    @PostMapping("/")
     public User createUser(@RequestBody User user){
         return userService.createUser(user);
     }
 
     /*Editar usuario */
-    @PutMapping("/user/{id}")
+    @PutMapping("/{id}")
     public User updateUser(@PathVariable Long id , @RequestBody User user){
        return userService.createUser(user);
     }
 
     /* Deletear usuario */
-    @DeleteMapping("/user/{id}")
+    @DeleteMapping("/{id}")
     public void deleteUser(@PathVariable Long id ){
         userService.deleteUser(id);
     }
