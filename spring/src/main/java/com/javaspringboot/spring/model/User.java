@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.annotations.UpdateTimestamp;
@@ -24,6 +25,7 @@ public class User {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
+    @NotBlank /* Esto es para decirle a la BD que no puede estar vacio ni ser null */
     private String name;
     @Email(message = "Invalid email format")
     private String email;
